@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Test React</title>
+
+<!-- Load React API -->
+<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<!-- Load React DOM-->
+<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- Load Babel Compiler -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<body>
+	<div id="DivID"></div>
+	<!-- <script type="text/javascript"></script> -->
+<script type="text/babel">
+function tick() {
+  const element = (<h1>{new Date().toLocaleTimeString()}</h1>);
+  ReactDOM.render(element, document.getElementById('DivID'));
+}
+setInterval(tick, 1000);
+
+// class Hello extends React.Component {
+//     render() {
+//         return <h1>TOPS Technologies</h1>;
+//     }
+// }
+
+// ReactDOM.render(
+//     <Hello />, 
+//     document.getElementById("DivID")
+// );
+    
+</script>
+
+</body>
+</html>

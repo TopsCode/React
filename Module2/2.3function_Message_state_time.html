@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Test React</title>
+
+<!-- Load React API -->
+<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<!-- Load React DOM-->
+<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- Load Babel Compiler -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<body>
+    <div id="root"></div>
+<script type="text/babel">
+    class Hello extends React.Component {
+    
+    constructor(){
+        super();
+        this.state = {date: new Date()};
+    }
+    
+    tick(){this.setState({date:new Date()});} 
+
+    componentDidMount() {
+         this.timerID = setInterval( () => this.tick(),1000);
+    }
+
+    render() {
+         return (
+           <div>
+             <h2>The Time is {this.state.date.toLocaleTimeString()}.</h2>
+           </div>   
+        )
+    }
+    
+}
+ReactDOM.render(
+    <Hello />, 
+    document.getElementById("root")
+);
+
+</script>
+</body>
+</html>
